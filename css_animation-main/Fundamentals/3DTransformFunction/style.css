@@ -1,0 +1,58 @@
+.scene {
+  width: 300px;
+  height: 300px;
+  margin: 75px auto;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border: 2px solid chocolate;
+
+  /* For 3d animation we should give perspective value */
+  /* perspective: 200px; */
+  perspective: 500px;
+  /* perspective: 700px; */
+}
+
+.card_face {
+  width: 100%;
+  height: 100%;
+  font-size: 4rem;
+  text-align: center;
+  line-height: 300px;
+  background-color: rgba(230, 86, 34, 0.315);
+
+  /* Transform functions */
+
+  /* TranslateZ function */
+  transform: translateX(100px);
+  transform: translateX(-100px);
+  /* translateZ(100px)-> +ve Front & -ve Back */
+  transform: translateZ(-100px);
+  transform: translateZ(100px);
+
+  /* RotateZ Function */
+  transform: rotateX(45deg);
+  transform: rotateY(50deg);
+  /* transform: rotateZ(50deg);
+  transform: rotateZ(-70deg); */
+
+  /* ScaleZ Function */
+  /* transform: scaleX(1.5);
+  transform: scaleY(1.5);
+  transform: scaleZ(2); */
+
+  /* 3d function usage */
+  /* X axis (width&height = 300px) top & bottom */
+  transform: rotateX(91deg) translateZ(150px);
+  transform: rotateX(90deg) translateZ(-150px);
+  /* Y axis --> left and right */
+  transform: rotateY(90deg) translateZ(150px);
+  transform: rotateY(90deg) translateZ(-150px);
+
+  transform: rotateY(0deg) translateZ(100px);
+  transform: rotateY(0deg) translateZ(-100px);
+  transform: rotateY(180deg) translateZ(100px);
+  transform: rotateY(180deg) translateZ(-100px);
+}

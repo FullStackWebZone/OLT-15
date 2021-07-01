@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D | Box</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="scene">
+      <div class="box">
+        <div class="box_face box_face-front">Front</div>
+        <div class="box_face box_face-back">Back</div>
+        <div class="box_face box_face-left">Left</div>
+        <div class="box_face box_face-right">Right</div>
+        <div class="box_face box_face-top">Top</div>
+        <div class="box_face box_face-bottom">Bottom</div>
+      </div>
+    </div>
+
+    <div class="radioGroup">
+      <input type="radio" name="rotate" value="front" checked />Front
+      <input type="radio" name="rotate" value="Back" />Back
+      <input type="radio" name="rotate" value="left" />Left
+      <input type="radio" name="rotate" value="right" />Right
+      <input type="radio" name="rotate" value="top" />Top
+      <input type="radio" name="rotate" value="bottom" />Bottom
+    </div>
+
+    <script>
+      const box = document.querySelector(".box");
+      const radioGroup = document.querySelector(".radioGroup");
+      let currentClass = "";
+      radioGroup.addEventListener("change", () => {
+        const checkedRadio = radioGroup.querySelector(":checked");
+        const showClass = "show-" + checkedRadio.value;
+        console.log(showClass);
+        if (currentClass) {
+          box.classList.remove(currentClass);
+        }
+        box.classList.add(showClass);
+        currentClass = showClass;
+      });
+    </script>
+  </body>
+</html>

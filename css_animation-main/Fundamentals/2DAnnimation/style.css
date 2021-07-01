@@ -1,0 +1,139 @@
+body {
+  background: lightblue;
+  font-size: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#page {
+  width: 750px;
+  height: 500px;
+  border: 3px solid green;
+  margin: auto;
+  /* background-color: black; */
+}
+
+/* #box1,
+#box2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+} */
+
+#box1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: coral;
+
+  animation-name: move;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 3;
+  /* animation-fill-mode: both; */
+  animation-direction: normal;
+  /* animation-direction: reverse; */
+  /* animation-direction: alternate; */
+  /* animation-direction: alternate-reverse; */
+  animation-timing-function: linear;
+  /* animation-timing-function: ease-in;
+  animation-timing-function: ease-out; */
+
+
+  /* round animation */
+  animation-name: round;
+
+  /* Animation shorthand property */
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: round 3s linear 0s 4 alternate both;
+
+  /* Bouncing Ball Animation */
+  animation: bouncing-ball 5s linear 1s infinite alternate both;
+}
+
+#box2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: purple;
+  animation: bouncing-ball2 5s linear 1s infinite alternate both;
+}
+
+#box1:hover {
+  animation-play-state: paused;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0px);
+  }
+  /* main-box width:750px and small-box:100px so, 750-100=650*/
+  to {
+    transform: translateX(650px);
+  }
+}
+
+@keyframes round {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(650px) translateY(0px);
+  }
+  50% {
+    transform: translateX(650px) translateY(400px);
+  }
+  75% {
+    transform: translateX(0px) translateY(400px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+@keyframes bouncing-ball {
+  0% {
+    transform: translateX(0px) translateY(400px);
+    /* background-color: red; */
+  }
+  25% {
+    transform: translateX(162px) translateY(0px);
+    /* background-color: gold; */
+  }
+  50% {
+    transform: translateX(325px) translateY(400px);
+    /* background: rgb(13, 9, 236); */
+  }
+  75% {
+    transform: translateX(487px) translateY(0px);
+    /* background-color: rgb(36, 173, 71); */
+  }
+  100% {
+    transform: translateX(650px) translateY(400px);
+    /* background-color: darkorange; */
+  }
+}
+
+@keyframes bouncing-ball2 {
+  0% {
+    transform: translateX(650px) translateY(400px);
+    /* background-color: red; */
+  }
+  25% {
+    transform: translateX(487px) translateY(0px);
+    /* background-color: gold; */
+  }
+  50% {
+    transform: translateX(325px) translateY(400px);
+    /* background: rgb(13, 9, 236); */
+  }
+  75% {
+    transform: translateX(162px) translateY(0px);
+    /* background-color: rgb(36, 173, 71); */
+  }
+  100% {
+    transform: translateX(0px) translateY(400px);
+    /* background-color: darkorange; */
+  }
+}
